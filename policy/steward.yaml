@@ -1,0 +1,17 @@
+# What Aether is allowed to do while Linux still owns the metal.
+phase: 2
+allow_skills:
+  - identity
+  - witness
+  # Enable shell only after you have a snapshot of the AVD.
+  # - shell
+write_roots:
+  - /data/local/aether
+  - /data/local/tmp
+forbid_paths:
+  - /system
+  - /vendor
+  - /proc/sys
+notes: |
+  Phase 2 default is observe-only. Flip shell on when you are ready
+  for the OS to act, not just talk.
