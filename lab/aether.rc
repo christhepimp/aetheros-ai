@@ -1,0 +1,12 @@
+# Phase 4 sketch — do not install until Phase 3 is stable.
+# Drop under /system/etc/init or inject via Magisk overlay.
+
+service aether /data/local/aether/bin/aether --steward
+    class late_start
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start aether
